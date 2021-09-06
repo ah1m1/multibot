@@ -1,6 +1,7 @@
 package listeners;
 
 import commands.GutCommand;
+import commands.HSCommand;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
@@ -16,6 +17,13 @@ public class CommandHandler extends ListenerAdapter {
         }
         if(message.startsWith("!gut")) {
             GutCommand.gut(event, message);
+        }
+
+
+        //HSCOMMAND
+
+        if(message.startsWith("!HS")){
+            HSCommand.hsCommand(event);
         }
     }
 }
