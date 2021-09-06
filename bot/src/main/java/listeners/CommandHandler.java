@@ -14,8 +14,8 @@ public class CommandHandler extends ListenerAdapter {
             event.getChannel().sendMessage("hello world").queue();
         }
         if(message.startsWith("!gut")) {
-            String[] args = message.replace("!gut","").split(" ");
-            System.out.println(args[0]);
+            String args = message.replace("!gut ","");
+            System.out.println(args);
         }
     }
 }
