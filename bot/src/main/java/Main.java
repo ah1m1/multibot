@@ -1,14 +1,16 @@
 import listeners.CommandHandler;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.sharding.DefaultShardManager;
+import tools.Storage;
 
 import javax.security.auth.login.LoginException;
 
 public class Main {
 
     public static void main(String[] args) throws LoginException {
+        Storage.init();
 
-        DefaultShardManager builder = new DefaultShardManager("ODg0NDYzOTA3Nzc3OTU3ODg4.YTY3NA.64xsIVDihfe6qthjjCQhUcHFLv0");
+        DefaultShardManager builder = new DefaultShardManager(Storage.getValue("token"));
         builder.setStatus(OnlineStatus.IDLE);
 
         builder.addEventListener(new CommandHandler());
