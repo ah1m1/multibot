@@ -16,10 +16,10 @@ public class CommandHandler extends ListenerAdapter {
         if(message.startsWith("prefix")) {
             message = message.replaceFirst(Storage.getValue("prefix"), "");
 
-            if(message.startsWith("!hi")) {
+            if(message.startsWith("hi")) {
                 event.getChannel().sendMessage("hello world").queue();
             }
-            if(message.startsWith("!gut")) {
+            if(message.startsWith("gut")) {
                 GutCommand.gut(event, message);
             }
 
